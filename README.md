@@ -1,3 +1,4 @@
+```lua
 for i, v in pairs(getgc()) do
     if type(v) == "function" and not iselectronfunction(v) and not iscclosure(v) then
         local info = debug.getinfo(v)
@@ -28,3 +29,4 @@ Speed =  hookmetamethod(game, "__newindex", function(t, k, v)
     return Speed(t, k, v)
 end)
 print("Passed")
+```
