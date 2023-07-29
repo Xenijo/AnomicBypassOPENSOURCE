@@ -31,4 +31,12 @@ Speed =  hookmetamethod(game, "__newindex", function(t, k, v)
     return Speed(t, k, v)
 end)
 print("Passed")
+-- Disable the error event connections
+local errorEvent = game:GetService("ScriptContext").Error
+local connections = getconnections(errorEvent)
+for _, connection in pairs(connections) do
+    connection:Disable()
+end
+
+print("Passed")
 ```
